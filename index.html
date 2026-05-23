@@ -1,499 +1,676 @@
+<!-- =========================================================
+KETHULY ALINE — CURRÍCULO ONLINE COMPLETO
+========================================================= -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kethuly Aline | Currículo Online</title>
+<title>Kethuly Aline | Currículo Online</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:#050505;
-      color:white;
-      overflow-x:hidden;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    html{
-      scroll-behavior:smooth;
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
 
-    ::selection{
-      background:#67e8f9;
-      color:black;
-    }
+::selection{
+background:#67e8f9;
+color:black;
+}
 
-    .grain{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.03;
-      z-index:999;
-      background-image:
-      radial-gradient(#fff 0.7px,transparent 0.7px);
-      background-size:4px 4px;
-    }
+.grain{
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.03;
+z-index:999;
+background-image:
+radial-gradient(#fff 0.7px,transparent 0.7px);
+background-size:4px 4px;
+}
 
-    .cyan{
-      color:#67e8f9;
-    }
+.glow{
+position:fixed;
+top:-20%;
+right:-10%;
+width:900px;
+height:900px;
+background:rgba(34,211,238,.10);
+filter:blur(180px);
+border-radius:999px;
+pointer-events:none;
+}
 
-    .border-custom{
-      border-color:rgba(255,255,255,.08);
-    }
+.hero-title{
 
-    .section-title{
+font-size:clamp(5rem,14vw,14rem);
+line-height:.78;
+letter-spacing:-0.12em;
+font-weight:900;
+text-transform:uppercase;
 
-      font-size:clamp(3rem,7vw,7rem);
-      line-height:.9;
-      letter-spacing:-0.08em;
-      font-weight:900;
-      text-transform:uppercase;
+}
 
-    }
+.section-title{
 
-    .hero-title{
+font-size:clamp(3rem,8vw,7rem);
+line-height:.9;
+letter-spacing:-0.08em;
+font-weight:900;
+text-transform:uppercase;
 
-      font-size:clamp(5rem,14vw,14rem);
-      line-height:.78;
-      letter-spacing:-0.12em;
-      font-weight:900;
-      text-transform:uppercase;
+}
 
-    }
+.card{
 
-    .card{
-      border:1px solid rgba(255,255,255,.08);
-      transition:.5s;
-      background:rgba(255,255,255,.01);
-      backdrop-filter:blur(10px);
-    }
+border:1px solid rgba(255,255,255,.08);
 
-    .card:hover{
-      border-color:#67e8f9;
-      transform:translateY(-6px);
-    }
+background:rgba(255,255,255,.02);
 
-    .skill{
-      border:1px solid rgba(255,255,255,.08);
-      padding:14px 18px;
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.25em;
-      transition:.5s;
-    }
+transition:.5s;
 
-    .skill:hover{
-      background:#67e8f9;
-      color:black;
-      border-color:#67e8f9;
-    }
+backdrop-filter:blur(12px);
 
-    .btn{
+}
 
-      border:1px solid rgba(255,255,255,.1);
+.card:hover{
 
-      padding:16px 26px;
+border-color:#67e8f9;
 
-      font-size:11px;
+transform:translateY(-5px);
 
-      text-transform:uppercase;
+}
 
-      letter-spacing:.3em;
+.line{
+width:100%;
+height:1px;
+background:rgba(255,255,255,.08);
+}
 
-      transition:.5s;
+.skill{
 
-      display:inline-flex;
+border:1px solid rgba(255,255,255,.08);
 
-      align-items:center;
+padding:14px 18px;
 
-      justify-content:center;
+font-size:11px;
 
-    }
+text-transform:uppercase;
 
-    .btn:hover{
+letter-spacing:.2em;
 
-      background:#67e8f9;
-      color:black;
-      border-color:#67e8f9;
+transition:.5s;
 
-    }
+}
 
-  </style>
+.skill:hover{
+
+background:#67e8f9;
+color:black;
+
+}
+
+.btn{
+
+border:1px solid rgba(255,255,255,.1);
+
+padding:16px 24px;
+
+font-size:11px;
+
+text-transform:uppercase;
+
+letter-spacing:.25em;
+
+transition:.5s;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.btn:hover{
+
+background:#67e8f9;
+color:black;
+
+}
+
+.cyan{
+color:#67e8f9;
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <!-- GRAIN -->
+<div class="grain"></div>
+<div class="glow"></div>
 
-  <div class="grain"></div>
+<!-- HERO -->
 
-  <!-- HERO -->
+<section class="relative min-h-screen flex items-center overflow-hidden px-6 md:px-20 py-32">
 
-  <section class="relative min-h-screen flex items-center overflow-hidden px-6 md:px-20 py-32">
+<img
+src="hero.png"
+class="absolute right-[-5%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.6]"
+>
 
-    <!-- GLOW -->
+<div class="relative z-10 max-w-[950px]">
 
-    <div class="absolute top-[-20%] right-[-10%] w-[900px] h-[900px] bg-cyan-300/10 blur-[180px] rounded-full"></div>
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-8">
+Direção Visual • Motion Design • Produção Cultural
+</div>
 
-    <!-- IMAGE -->
+<h1 class="hero-title">
 
-    <img
-      src="hero.png"
-      class="absolute right-[-5%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.6]"
-    >
+Kethuly
+<br>
+Aline
 
-    <!-- CONTENT -->
+</h1>
 
-    <div class="relative z-10 max-w-[900px]">
+<div class="grid md:grid-cols-[120px_1fr] gap-8 mt-14">
 
-      <div class="uppercase tracking-[0.45em] text-[11px] cyan mb-8">
+<div class="uppercase tracking-[0.4em] text-[10px] text-white/40 pt-2">
+Sobre
+</div>
 
-        Direção Visual • Motion Design • Produção Cultural
+<div class="text-white/70 leading-[2.1] text-base md:text-lg">
 
-      </div>
+Diretora visual, motion designer, VJ e produtora cultural atuando entre festivais, experiências audiovisuais, cultura contemporânea e narrativas afro-ameríndias.
 
-      <h1 class="hero-title">
+<br><br>
 
-        Kethuly
-        <br>
-        Aline
+Fundadora do Núcleo Axé Cultural, iniciativa dedicada ao fortalecimento de expressões culturais afro-ameríndias através da comunicação, audiovisual e produção cultural.
 
-      </h1>
+</div>
 
-      <div class="grid md:grid-cols-[120px_1fr] gap-8 mt-14">
+</div>
 
-        <div class="uppercase tracking-[0.4em] text-[10px] text-white/40 pt-2">
-          Sobre
-        </div>
+<div class="flex flex-wrap gap-4 mt-14">
 
-        <div class="text-white/70 leading-[2.1] text-base md:text-lg">
+<a
+href="https://thekitket.my.canva.site/"
+target="_blank"
+class="btn"
+>
+Portfólio
+</a>
 
-          Diretora visual, motion designer, VJ e produtora cultural atuando entre festivais, experiências audiovisuais, cultura contemporânea e narrativas afro-ameríndias.
+<a
+href="https://instagram.com/nucleoaxecultural"
+target="_blank"
+class="btn"
+>
+Núcleo Axé Cultural
+</a>
 
-          <br><br>
+<a
+href="https://linkedin.com/in/thekitket"
+target="_blank"
+class="btn"
+>
+Linkedin
+</a>
 
-          Fundadora do Núcleo Axé Cultural, iniciativa dedicada ao fortalecimento de expressões culturais afro-ameríndias através da comunicação, audiovisual e produção cultural.
+</div>
 
-        </div>
+</div>
 
-      </div>
+</section>
 
-      <!-- BUTTONS -->
+<div class="line"></div>
 
-      <div class="flex flex-wrap gap-4 mt-14">
+<!-- DADOS -->
 
-        <a
-          href="https://thekitket.my.canva.site/"
-          target="_blank"
-          class="btn"
-        >
-          Ver Portfólio
-        </a>
+<section class="px-6 md:px-24 py-24">
 
-        <a
-          href="https://instagram.com/nucleoaxecultural"
-          target="_blank"
-          class="btn"
-        >
-          Núcleo Axé Cultural
-        </a>
+<div class="uppercase tracking-[0.4em] text-[11px] cyan mb-5">
+Informações
+</div>
 
-      </div>
+<h2 class="section-title mb-20">
+Contato
+</h2>
 
-    </div>
+<div class="grid md:grid-cols-2 gap-8">
 
-  </section>
+<div class="card p-10 rounded-[28px]">
+<h3 class="text-2xl font-black mb-6">Contato</h3>
 
-  <!-- EXPERIÊNCIA -->
+<div class="space-y-4 text-white/70 leading-[2]">
 
-  <section class="px-6 md:px-24 py-32 border-t border-custom">
+<p>Parnamirim - RN</p>
+<p>(84) 9 9964-9683</p>
+<p>thekitket@gmail.com</p>
+<p>wa.me/+558499649683</p>
 
-    <div class="flex items-end justify-between gap-10 mb-20 flex-wrap">
+</div>
+</div>
 
-      <div>
+<div class="card p-10 rounded-[28px]">
 
-        <div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
-          Experiência Profissional
-        </div>
+<h3 class="text-2xl font-black mb-6">
+Setup Home Office
+</h3>
 
-        <h2 class="section-title">
-          Trajetória
-        </h2>
+<div class="space-y-4 text-white/70 leading-[2]">
 
-      </div>
+<p>AMD Ryzen 5 4600</p>
+<p>16GB RAM</p>
+<p>NVIDIA RTX 3060 12GB</p>
+<p>SSD NVME 500GB</p>
+<p>Windows 11</p>
 
-    </div>
+</div>
 
-    <!-- GRID -->
+</div>
 
-    <div class="grid md:grid-cols-2 gap-8">
+</div>
 
-      <!-- ITEM -->
+</section>
 
-      <div class="card p-10 rounded-[30px]">
+<div class="line"></div>
 
-        <div class="cyan uppercase tracking-[0.35em] text-[10px] mb-5">
-          Produção Cultural
-        </div>
+<!-- EXPERIÊNCIA -->
 
-        <h3 class="text-3xl font-black tracking-[-0.06em] mb-6">
-          Bloop Cultural
-        </h3>
+<section class="px-6 md:px-24 py-32">
 
-        <p class="text-white/65 leading-[2]">
-          Assistente de produção, motion graphics, credenciamento e editais culturais.
-        </p>
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Experiência Profissional
+</div>
 
-      </div>
+<h2 class="section-title mb-20">
 
-      <!-- ITEM -->
+Trajetória
 
-      <div class="card p-10 rounded-[30px]">
+</h2>
 
-        <div class="cyan uppercase tracking-[0.35em] text-[10px] mb-5">
-          Audiovisual
-        </div>
+<div class="space-y-8">
 
-        <h3 class="text-3xl font-black tracking-[-0.06em] mb-6">
-          FUNCARTE
-        </h3>
+<!-- ITEM -->
 
-        <p class="text-white/65 leading-[2]">
-          Motion designer e audiovisual institucional.
-        </p>
+<div class="card p-10 rounded-[30px]">
 
-      </div>
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+2025 - Atual
+</div>
 
-      <!-- ITEM -->
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
+Bloop Cultural
+</h3>
 
-      <div class="card p-10 rounded-[30px]">
+<p class="text-white/60 leading-[2]">
+Assistente de Produção PJ. Criação e animação de peças gráficas, credenciamentos, acompanhamento artístico e inscrições em editais culturais.
+</p>
 
-        <div class="cyan uppercase tracking-[0.35em] text-[10px] mb-5">
-          Eventos
-        </div>
+</div>
 
-        <h3 class="text-3xl font-black tracking-[-0.06em] mb-6">
-          Clickmassa Conversas
-        </h3>
+<!-- ITEM -->
 
-        <p class="text-white/65 leading-[2]">
-          Motion graphics, telão LED, experiências audiovisuais e eventos.
-        </p>
+<div class="card p-10 rounded-[30px]">
 
-      </div>
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+2025
+</div>
 
-      <!-- ITEM -->
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
+Clickmassa Conversas — Grupo Vectax
+</h3>
 
-      <div class="card p-10 rounded-[30px]">
+<p class="text-white/60 leading-[2]">
+Motion designer para eventos, animações para telão LED, vídeos para tráfego pago e peças gráficas.
+</p>
 
-        <div class="cyan uppercase tracking-[0.35em] text-[10px] mb-5">
-          Design
-        </div>
+</div>
 
-        <h3 class="text-3xl font-black tracking-[-0.06em] mb-6">
-          Câmara Municipal de Parnamirim
-        </h3>
+<!-- ITEM -->
 
-        <p class="text-white/65 leading-[2]">
-          Designer gráfico e audiovisual institucional.
-        </p>
+<div class="card p-10 rounded-[30px]">
 
-      </div>
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+2024 - 2025
+</div>
 
-    </div>
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
+Ágil Eireli
+</h3>
 
-  </section>
+<p class="text-white/60 leading-[2]">
+Atendimento ao cliente, suporte via chat e ligação, planilhas, entrevistas e apoio ao RH.
+</p>
 
-  <!-- FESTIVAIS -->
+</div>
 
-  <section class="px-6 md:px-24 py-32 border-t border-custom">
+<!-- ITEM -->
 
-    <div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
-      Festivais & Circuito Cultural
-    </div>
+<div class="card p-10 rounded-[30px]">
 
-    <h2 class="section-title mb-20">
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+2022 - 2025
+</div>
 
-      Eventos
-      <br>
-      & Artistas
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
+Bloop Cultural
+</h3>
 
-    </h2>
+<p class="text-white/60 leading-[2]">
+Assistência de produção, motion graphics, editais culturais e acompanhamento artístico.
+</p>
 
-    <div class="grid md:grid-cols-3 gap-6">
+</div>
 
-      <div class="card p-8 rounded-[24px]">
-        Festival MADA
-      </div>
+<!-- ITEM -->
 
-      <div class="card p-8 rounded-[24px]">
-        Coquetel Molotov
-      </div>
+<div class="card p-10 rounded-[30px]">
 
-      <div class="card p-8 rounded-[24px]">
-        Festival DoSol
-      </div>
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+2022 - 2023
+</div>
 
-      <div class="card p-8 rounded-[24px]">
-        Karol Conká
-      </div>
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
+FUNCARTE — SECULT
+</h3>
 
-      <div class="card p-8 rounded-[24px]">
-        Potyguara Bardo
-      </div>
+<p class="text-white/60 leading-[2]">
+Motion designer para peças institucionais.
+</p>
 
-      <div class="card p-8 rounded-[24px]">
-        Francisco, El Hombre
-      </div>
+</div>
 
-    </div>
+<!-- ITEM -->
 
-  </section>
+<div class="card p-10 rounded-[30px]">
 
-  <!-- SKILLS -->
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+2020 - 2021
+</div>
 
-  <section class="px-6 md:px-24 py-32 border-t border-custom">
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
+Câmara Municipal de Parnamirim
+</h3>
 
-    <div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
-      Ferramentas & Competências
-    </div>
+<p class="text-white/60 leading-[2]">
+Designer gráfico, mídias sociais, captação e edição de vídeos.
+</p>
 
-    <h2 class="section-title mb-20">
+</div>
 
-      Skills
+<!-- ITEM -->
 
-    </h2>
+<div class="card p-10 rounded-[30px]">
 
-    <div class="flex flex-wrap gap-4">
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+2019
+</div>
 
-      <div class="skill">After Effects</div>
-      <div class="skill">Premiere Pro</div>
-      <div class="skill">Photoshop</div>
-      <div class="skill">Illustrator</div>
-      <div class="skill">Motion Design</div>
-      <div class="skill">Direção Visual</div>
-      <div class="skill">Audiovisual</div>
-      <div class="skill">Produção Cultural</div>
-      <div class="skill">VJ</div>
-      <div class="skill">Social Media</div>
-      <div class="skill">Identidade Visual</div>
-      <div class="skill">Cobertura de Eventos</div>
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
+Já Passei Online
+</h3>
 
-    </div>
+<p class="text-white/60 leading-[2]">
+Gravação, edição e motion para plataforma de vídeo aulas.
+</p>
 
-  </section>
+</div>
 
-  <!-- NÚCLEO -->
+</div>
 
-  <section class="px-6 md:px-24 py-32 border-t border-custom">
+</section>
 
-    <div class="grid md:grid-cols-2 gap-20 items-center">
+<div class="line"></div>
 
-      <div>
+<!-- FORMAÇÃO -->
 
-        <img
-          src="nucleo.png"
-          class="w-full max-w-[450px]"
-        >
+<section class="px-6 md:px-24 py-32">
 
-      </div>
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Acadêmico
+</div>
 
-      <div>
+<h2 class="section-title mb-20">
 
-        <div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
-          Fundadora
-        </div>
+Formação
 
-        <h2 class="section-title mb-10">
+</h2>
 
-          Núcleo
-          <br>
-          Axé
-          <br>
-          Cultural
+<div class="card p-10 rounded-[30px]">
 
-        </h2>
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-6">
+IFRN — Técnico em Eventos
+</h3>
 
-        <div class="space-y-8 text-white/70 leading-[2.1]">
+<p class="text-white/60 leading-[2]">
+Natal Centro Histórico • Concluído em 2022
+</p>
 
-          <p>
-            Iniciativa dedicada ao fortalecimento de expressões culturais afro-ameríndias através da comunicação, audiovisual e produção cultural.
-          </p>
+</div>
 
-          <p>
-            O projeto desenvolve identidades visuais, circulação artística, experiências audiovisuais e narrativas ligadas à ancestralidade e território.
-          </p>
+</section>
 
-        </div>
+<div class="line"></div>
 
-      </div>
+<!-- CURSOS -->
 
-    </div>
+<section class="px-6 md:px-24 py-32">
 
-  </section>
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Cursos & Qualificações
+</div>
 
-  <!-- CONTATO -->
+<h2 class="section-title mb-20">
 
-  <section class="px-6 md:px-24 py-32 border-t border-custom text-center">
+Cursos
 
-    <div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
-      Contato
-    </div>
+</h2>
 
-    <h2 class="section-title mb-16">
+<div class="grid md:grid-cols-2 gap-8">
 
-      Vamos
-      <br>
-      Criar
+<div class="card p-8 rounded-[24px]">
+FIC — Analista e Parecerista de Projetos Culturais — IFG — 160h
+</div>
 
-    </h2>
+<div class="card p-8 rounded-[24px]">
+FIC — Agente Cultural — IFG — 160h
+</div>
 
-    <div class="flex flex-wrap justify-center gap-4">
+<div class="card p-8 rounded-[24px]">
+Produção Audiovisual — IFG — 60h
+</div>
 
-      <a
-        href="mailto:thekitket@gmail.com"
-        class="btn"
-      >
-        Email
-      </a>
+<div class="card p-8 rounded-[24px]">
+Rock U — Rock in Rio & SESC
+</div>
 
-      <a
-        href="https://instagram.com/thekitket"
-        target="_blank"
-        class="btn"
-      >
-        Instagram
-      </a>
+<div class="card p-8 rounded-[24px]">
+Oficina Produção Cultural — Pinote Produções
+</div>
 
-      <a
-        href="https://instagram.com/nucleoaxecultural"
-        target="_blank"
-        class="btn"
-      >
-        Núcleo Axé
-      </a>
+<div class="card p-8 rounded-[24px]">
+Oficina Direção de Palco & Roadie
+</div>
 
-    </div>
+<div class="card p-8 rounded-[24px]">
+Oficina Produção Audiovisual — Keila Sena
+</div>
 
-  </section>
+<div class="card p-8 rounded-[24px]">
+Oficina de Roteiro para Audiovisual
+</div>
+
+</div>
+
+</section>
+
+<div class="line"></div>
+
+<!-- SKILLS -->
+
+<section class="px-6 md:px-24 py-32">
+
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Skills
+</div>
+
+<h2 class="section-title mb-20">
+
+Ferramentas
+
+</h2>
+
+<div class="flex flex-wrap gap-4">
+
+<div class="skill">After Effects</div>
+<div class="skill">Premiere Pro</div>
+<div class="skill">Photoshop</div>
+<div class="skill">Illustrator</div>
+<div class="skill">Indesign</div>
+<div class="skill">Animate</div>
+<div class="skill">Excel</div>
+<div class="skill">PowerPoint</div>
+<div class="skill">Word</div>
+<div class="skill">Motion Design</div>
+<div class="skill">Produção Cultural</div>
+<div class="skill">Direção Visual</div>
+<div class="skill">Audiovisual</div>
+<div class="skill">VJ</div>
+<div class="skill">Colorista</div>
+
+</div>
+
+</section>
+
+<div class="line"></div>
+
+<!-- EVENTOS -->
+
+<section class="px-6 md:px-24 py-32">
+
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Shows & Eventos
+</div>
+
+<h2 class="section-title mb-20">
+
+Circuito
+Cultural
+
+</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="card p-8 rounded-[24px]">
+Festival MADA
+</div>
+
+<div class="card p-8 rounded-[24px]">
+Coquetel Molotov
+</div>
+
+<div class="card p-8 rounded-[24px]">
+Karol Conká
+</div>
+
+<div class="card p-8 rounded-[24px]">
+Potyguara Bardo
+</div>
+
+<div class="card p-8 rounded-[24px]">
+Francisco El Hombre
+</div>
+
+<div class="card p-8 rounded-[24px]">
+Festival DoSol
+</div>
+
+<div class="card p-8 rounded-[24px]">
+Carnaval Multicultural
+</div>
+
+<div class="card p-8 rounded-[24px]">
+Open Dance Brasil
+</div>
+
+</div>
+
+</section>
+
+<div class="line"></div>
+
+<!-- CONTATO -->
+
+<section class="px-6 md:px-24 py-32 text-center">
+
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Contato
+</div>
+
+<h2 class="section-title mb-16">
+
+Vamos
+Criar
+
+</h2>
+
+<div class="flex flex-wrap justify-center gap-4">
+
+<a
+href="mailto:thekitket@gmail.com"
+class="btn"
+>
+Email
+</a>
+
+<a
+href="https://instagram.com/thekitket"
+target="_blank"
+class="btn"
+>
+Instagram
+</a>
+
+<a
+href="https://instagram.com/nucleoaxecultural"
+target="_blank"
+class="btn"
+>
+Núcleo Axé Cultural
+</a>
+
+</div>
+
+</section>
 
 </body>
 
