@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kethuly Aline | Direção Criativa & Produção Cultural</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #0d0d0d;
+      --terracota: #a35a35;
+      --verde: #2f4a3d;
+      --bege: #d8c5a3;
+      --off: #efe9df;
+      --cinza: #b7b7b7;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--off);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: var(--terracota);
+    }
+
+    section {
+      padding: 120px 8%;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    p {
+      line-height: 1.8;
+      color: var(--cinza);
+    }
+
+    .navbar {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      backdrop-filter: blur(14px);
+      background: rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .menu {
+      display: flex;
+      gap: 28px;
+    }
+
+    .menu a {
+      color: var(--off);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: var(--terracota);
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+      linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=2070&auto=format&fit=crop') center/cover;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(163,90,53,0.2), transparent 70%);
+      top: -100px;
+      right: -100px;
+      animation: pulse 8s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.3);
+      }
+    }
+
+    .hero-content {
+      max-width: 850px;
+      z-index: 2;
+    }
+
+    .hero span {
+      color: var(--terracota);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: 6rem;
+      line-height: 0.95;
+      margin: 24px 0;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 1.1rem;
+      margin-bottom: 42px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 34px;
+      border: 1px solid var(--terracota);
+      color: var(--off);
+      text-decoration: none;
+      transition: 0.3s;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      background: var(--terracota);
+      transform: translateY(-3px);
+    }
+
+    .outline {
+      border-color: var(--off);
+    }
+
+    .section-title {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      color: var(--terracota);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 700px;
+      background:
+      linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop') center/cover;
+      border-radius: 24px;
+    }
+
+    .about-content p {
+      margin-bottom: 24px;
+    }
+
+    .projects-grid {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 24px;
+      cursor: pointer;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.6s;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.95));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 36px;
+    }
+
+    .project-overlay h3 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .project-overlay p {
+      font-size: 0.95rem;
+    }
+
+    .nucleo {
+      background: linear-gradient(135deg, rgba(47,74,61,0.35), rgba(163,90,53,0.15));
+      border-radius: 30px;
+      padding: 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nucleo::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+      top: -200px;
+      right: -120px;
+    }
+
+    .nucleo p {
+      max-width: 800px;
+      margin-top: 28px;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 70px;
+    }
+
+    .experience-item {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 30px;
+      border-radius: 18px;
+      transition: 0.4s;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .experience-item:hover {
+      transform: translateY(-8px);
+      border-color: rgba(163,90,53,0.4);
+    }
+
+    .experience-item h3 {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 5rem;
+      margin-bottom: 28px;
+    }
+
+    .contact-links {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      padding: 16px 28px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      color: var(--off);
+      transition: 0.3s;
+    }
+
+    .contact-links a:hover {
+      background: var(--terracota);
+      border-color: var(--terracota);
+    }
+
+    footer {
+      padding: 40px 8%;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      color: #8b8b8b;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 980px) {
+
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 500px;
+      }
+
+      .section-title {
+        font-size: 3rem;
+      }
+
+      .contact h2 {
+        font-size: 3rem;
+      }
+
+      .nucleo {
+        padding: 60px 40px;
+      }
+
+      .menu {
+        display: none;
+      }
+    }
+
+    @media(max-width: 600px) {
+
+      section {
+        padding: 90px 7%;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2.4rem;
+      }
+
+      .project-card {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">KETHULY ALINE</div>
+
+    <nav class="menu">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#nucleo">Núcleo Axé</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span>Direção Criativa • Audiovisual • Produção Cultural</span>
+
+      <h1>
+        Kethuly
+        Aline
+      </h1>
+
+      <p>
+        Fundadora do Núcleo Axé Cultural, desenvolvendo narrativas visuais, projetos culturais e experiências audiovisuais voltadas às expressões afro-ameríndias contemporâneas.
+      </p>
+
+      <div class="buttons">
+        <a href="#projetos" class="btn">Ver Projetos</a>
+        <a href="https://www.instagram.com/nucleoaxecultural/" target="_blank" class="btn outline">Núcleo Axé Cultural</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="about">
+      <div class="about-image"></div>
+
+      <div class="about-content">
+        <div class="subtitle">Sobre</div>
+
+        <h2 class="section-title">
+          Narrativa,
+          território
+          e estética.
+        </h2>
+
+        <p>
+          Kethuly Aline atua entre o audiovisual, a música, os festivais independentes e a produção cultural contemporânea.
+        </p>
+
+        <p>
+          Sua trajetória reúne experiências em motion design, direção visual, produção técnica, VJ, editais culturais e comunicação para projetos artísticos.
+        </p>
+
+        <p>
+          Com atuação em festivais, coletivos e projetos culturais do Rio Grande do Norte, desenvolve trabalhos que conectam identidade, ancestralidade e linguagem contemporânea.
+        </p>
+
+        <p>
+          É fundadora do Núcleo Axé Cultural, iniciativa voltada ao fortalecimento de expressões culturais afro-ameríndias através do audiovisual, da comunicação e da produção cultural.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+
+    <div class="subtitle">Projetos</div>
+
+    <h2 class="section-title">
+      Audiovisual,
+      Design e
+      Cultura.
+    </h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop" alt="Projeto">
+
+        <div class="project-overlay">
+          <h3>Motion & VJ</h3>
+          <p>
+            Motion graphics, conteúdos audiovisuais e visuais para shows, festivais e experiências culturais.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1516280030429-27679b3dc9cf?q=80&w=1974&auto=format&fit=crop" alt="Projeto">
+
+        <div class="project-overlay">
+          <h3>Produção Cultural</h3>
+          <p>
+            Produção técnica, editais culturais, direção de palco, credenciamento e articulação de eventos.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1974&auto=format&fit=crop" alt="Projeto">
+
+        <div class="project-overlay">
+          <h3>Design Visual</h3>
+          <p>
+            Identidade visual, campanhas, social media e direção estética para projetos culturais.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="nucleo">
+
+    <div class="nucleo">
+
+      <div class="subtitle">Fundadora</div>
+
+      <h2 class="section-title">
+        Núcleo
+        Axé Cultural
+      </h2>
+
+      <p>
+        O Núcleo Axé Cultural nasce como iniciativa voltada ao fortalecimento de expressões culturais afro-ameríndias através da comunicação, do audiovisual, da produção cultural e da circulação de projetos artísticos.
+      </p>
+
+      <p>
+        A proposta articula identidade, território, ancestralidade e linguagem contemporânea, desenvolvendo projetos culturais, estratégias visuais e ações de valorização das culturas tradicionais e periféricas.
+      </p>
+
+      <div class="buttons" style="margin-top: 40px;">
+        <a href="https://www.instagram.com/nucleoaxecultural/" target="_blank" class="btn">Acessar Instagram</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experiencia">
+
+    <div class="subtitle">Experiência</div>
+
+    <h2 class="section-title">
+      Festivais,
+      artistas e
+      projetos.
+    </h2>
+
+    <div class="experience">
+
+      <div class="experience-item">
+        <h3>Festival No Ar Coquetel Molotov</h3>
+        <p>
+          Produção, credenciamento e atuação em diferentes edições do festival.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Festival DoSol</h3>
+        <p>
+          Assistência de produção e atuação em experiências culturais e musicais.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Potyguara Bardo</h3>
+        <p>
+          Motion, VJ e atuação em apresentações e eventos culturais.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>FUNCARTE & IFRN</h3>
+        <p>
+          Experiências em produção cultural, motion design e projetos institucionais.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+
+    <div class="subtitle">Contato</div>
+
+    <h2>
+      Vamos criar
+      algo juntos.
+    </h2>
+
+    <p>
+      Disponível para projetos culturais, direção criativa, audiovisual, motion design e colaboração artística.
+    </p>
+
+    <div class="contact-links">
+      <a href="https://www.instagram.com/thekitket/" target="_blank">Instagram</a>
+      <a href="https://www.behance.net/thekitket" target="_blank">Behance</a>
+      <a href="https://www.linkedin.com/in/thekitket/" target="_blank">LinkedIn</a>
+      <a href="mailto:thekitket@gmail.com">E-mail</a>
+      <a href="https://wa.me/558499649683" target="_blank">WhatsApp</a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 — Kethuly Aline • Direção Criativa & Produção Cultural
+  </footer>
+
+  <script>
+
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.animate([
+            {
+              opacity: 0,
+              transform: 'translateY(40px)'
+            },
+            {
+              opacity: 1,
+              transform: 'translateY(0px)'
+            }
+          ], {
+            duration: 1000,
+            fill: 'forwards'
+          });
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    sections.forEach(section => {
+      section.style.opacity = 0;
+      observer.observe(section);
+    });
+
+  </script>
+
+</body>
+</html>
