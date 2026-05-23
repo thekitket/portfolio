@@ -1,3 +1,9 @@
+<!-- =========================
+KETHULY ALINE — CINEMATIC PORTFOLIO V2
+REFERÊNCIA: gabrielgianni.com.br
+ESTILO: cinematic / premium / cyan / brutalist
+========================= -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,9 +15,11 @@
   <title>Kethuly Aline — Direção Visual & Produção Cultural</title>
 
   <!-- TAILWIND -->
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- FONT -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -33,10 +41,11 @@
     }
 
     body{
-      background:#020202;
-      overflow-x:hidden;
       font-family:'Inter',sans-serif;
+      background:#020202;
       color:white;
+      overflow-x:hidden;
+      cursor:default;
     }
 
     ::selection{
@@ -44,79 +53,108 @@
       color:black;
     }
 
-    /* GRAIN */
+    /* =========================
+    SCROLLBAR
+    ========================= */
+
+    ::-webkit-scrollbar{
+      width:8px;
+    }
+
+    ::-webkit-scrollbar-track{
+      background:black;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:#67e8f9;
+    }
+
+    /* =========================
+    GRAIN
+    ========================= */
 
     .grain{
       position:fixed;
       inset:0;
       pointer-events:none;
-      opacity:.035;
-      z-index:999;
+      opacity:.03;
+      z-index:9999;
       background-image:
       radial-gradient(#fff 0.7px,transparent 0.7px);
       background-size:4px 4px;
     }
 
-    /* CYAN GLOW */
+    /* =========================
+    CYAN LIGHT
+    ========================= */
 
-    .cyan-glow{
+    .cyan-light{
       position:fixed;
-      top:-20%;
-      right:-10%;
       width:900px;
       height:900px;
-      background:rgba(34,211,238,.12);
+      background:rgba(34,211,238,.10);
       filter:blur(180px);
       border-radius:999px;
+      top:-20%;
+      right:-10%;
       pointer-events:none;
       z-index:0;
     }
 
-    /* LINES */
-
-    .line{
-      width:100%;
-      height:1px;
-      background:rgba(255,255,255,.06);
-    }
-
-    /* HUGE TEXT */
+    /* =========================
+    HERO TITLE
+    ========================= */
 
     .hero-title{
+
       font-size:clamp(6rem,15vw,18rem);
-      line-height:.78;
-      letter-spacing:-0.11em;
+      line-height:.76;
+      letter-spacing:-0.12em;
       font-weight:900;
       text-transform:uppercase;
+
     }
+
+    /* =========================
+    SECTION TITLE
+    ========================= */
 
     .section-title{
+
       font-size:clamp(4rem,10vw,10rem);
-      line-height:.82;
-      letter-spacing:-0.09em;
+      line-height:.84;
+      letter-spacing:-0.10em;
       font-weight:900;
       text-transform:uppercase;
+
     }
 
-    .massive-text{
-      font-size:clamp(6rem,16vw,20rem);
+    /* =========================
+    HUGE WORD
+    ========================= */
+
+    .huge-word{
+
+      position:absolute;
+      top:0;
+      left:0;
+      font-size:18vw;
       line-height:.8;
-      letter-spacing:-0.1em;
+      letter-spacing:-0.12em;
       font-weight:900;
+      color:rgba(255,255,255,.02);
       text-transform:uppercase;
+      pointer-events:none;
+
     }
 
-    /* PARALLAX */
-
-    .parallax{
-      transform:translateZ(0);
-      will-change:transform;
-    }
-
-    /* BUTTON */
+    /* =========================
+    BUTTON
+    ========================= */
 
     .btn{
-      border:1px solid rgba(255,255,255,.1);
+
+      border:1px solid rgba(255,255,255,.08);
       padding:18px 34px;
       text-transform:uppercase;
       letter-spacing:.35em;
@@ -125,44 +163,174 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      backdrop-filter:blur(10px);
+
     }
 
     .btn:hover{
+
       background:#67e8f9;
       color:black;
+      border-color:#67e8f9;
+
     }
 
-    /* EXPERIENCE */
+    /* =========================
+    EXPERIENCE
+    ========================= */
 
-    .experience-item{
+    .experience{
+
       border-bottom:1px solid rgba(255,255,255,.06);
-      transition:.6s;
+      transition:.7s;
+      position:relative;
+      overflow:hidden;
+
     }
 
-    .experience-item:hover{
+    .experience::before{
+
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      width:0%;
+      height:100%;
       background:rgba(255,255,255,.02);
-      padding-left:20px;
+      transition:.7s;
+
     }
 
-    .experience-item h3{
-      transition:.6s;
+    .experience:hover::before{
+      width:100%;
     }
 
-    .experience-item:hover h3{
+    .experience:hover{
+      padding-left:25px;
+    }
+
+    .experience h3{
+      transition:.7s;
+    }
+
+    .experience:hover h3{
       transform:translateX(10px);
+      color:#67e8f9;
     }
 
-    /* FESTIVAL */
+    /* =========================
+    FESTIVAL
+    ========================= */
 
     .festival{
+
       border-bottom:1px solid rgba(255,255,255,.06);
-      padding-bottom:30px;
-      transition:.6s;
+      padding-bottom:35px;
+      transition:.7s;
+
     }
 
     .festival:hover{
+
+      transform:translateX(12px);
       border-color:rgba(103,232,249,.4);
-      transform:translateX(10px);
+
+    }
+
+    .festival:hover h3{
+      color:#67e8f9;
+    }
+
+    /* =========================
+    PARALLAX HERO
+    ========================= */
+
+    .hero-image{
+
+      position:absolute;
+      right:-6%;
+      bottom:0;
+      height:100vh;
+      object-fit:contain;
+      filter:
+      grayscale(1)
+      contrast(1.1)
+      brightness(.58);
+
+      animation:float 7s ease-in-out infinite;
+
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* =========================
+    CYAN BORDER
+    ========================= */
+
+    .cyan-line{
+
+      width:100%;
+      height:1px;
+      background:linear-gradient(
+      to right,
+      transparent,
+      rgba(103,232,249,.4),
+      transparent
+      );
+
+    }
+
+    /* =========================
+    SKILLS
+    ========================= */
+
+    .skill{
+
+      border:1px solid rgba(255,255,255,.08);
+      padding:18px 24px;
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.35em;
+      transition:.5s;
+
+    }
+
+    .skill:hover{
+
+      background:#67e8f9;
+      color:black;
+      transform:translateY(-4px);
+
+    }
+
+    /* =========================
+    MASSIVE SCROLL TEXT
+    ========================= */
+
+    .massive{
+
+      font-size:14vw;
+      line-height:.8;
+      letter-spacing:-0.12em;
+      font-weight:900;
+      color:rgba(255,255,255,.04);
+      text-transform:uppercase;
+      white-space:nowrap;
+
     }
 
   </style>
@@ -171,10 +339,15 @@
 
 <body>
 
-  <div class="grain"></div>
-  <div class="cyan-glow"></div>
+  <!-- GRAIN -->
 
-  <!-- NAV -->
+  <div class="grain"></div>
+
+  <!-- CYAN LIGHT -->
+
+  <div class="cyan-light"></div>
+
+  <!-- NAVBAR -->
 
   <header class="fixed top-0 left-0 w-full z-50 px-6 md:px-16 py-8 flex justify-between items-center mix-blend-difference">
 
@@ -186,7 +359,9 @@
       >
 
       <span class="uppercase tracking-[0.45em] text-[10px]">
+
         Kethuly Aline
+
       </span>
 
     </div>
@@ -201,7 +376,7 @@
         Trajetória
       </a>
 
-      <a href="#circuito" class="hover:text-cyan-300 transition">
+      <a href="#festival" class="hover:text-cyan-300 transition">
         Circuito
       </a>
 
@@ -229,12 +404,12 @@
 
     <img
       src="hero.png"
-      class="absolute right-[-5%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.58] parallax"
+      class="hero-image"
     >
 
     <!-- CONTENT -->
 
-    <div class="relative z-20 max-w-[1300px]">
+    <div class="relative z-20 max-w-[1400px]">
 
       <div class="uppercase tracking-[0.55em] text-cyan-300 text-[10px] md:text-xs mb-10">
 
@@ -253,10 +428,12 @@
       <div class="grid md:grid-cols-[120px_1fr] gap-10 mt-12 max-w-3xl">
 
         <div class="uppercase tracking-[0.4em] text-[10px] text-white/40 pt-2">
+
           Sobre
+
         </div>
 
-        <div class="text-white/70 leading-[2.1] text-base md:text-lg">
+        <div class="text-white/70 leading-[2.2] text-base md:text-lg">
 
           Diretora visual, motion designer, VJ e produtora cultural atuando entre festivais, experiências audiovisuais, direção artística, cultura contemporânea e narrativas afro-ameríndias.
 
@@ -288,21 +465,41 @@
 
   </section>
 
-  <div class="line"></div>
+  <!-- MASSIVE -->
+
+  <section class="overflow-hidden py-14">
+
+    <div class="massive">
+
+      AUDIOVISUAL • MOTION • CULTURA • DESIGN • CINEMA • PRODUÇÃO •
+
+    </div>
+
+  </section>
+
+  <div class="cyan-line"></div>
 
   <!-- SOBRE -->
 
   <section
     id="sobre"
-    class="px-6 md:px-24 py-44 md:py-56"
+    class="relative px-6 md:px-24 py-44 md:py-56"
   >
 
-    <div class="grid md:grid-cols-2 gap-24 items-end">
+    <div class="huge-word">
+
+      VISUAL
+
+    </div>
+
+    <div class="relative z-10 grid md:grid-cols-2 gap-24 items-end">
 
       <div>
 
         <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-10">
+
           Manifesto
+
         </div>
 
         <h2 class="section-title mb-14">
@@ -313,14 +510,14 @@
 
         </h2>
 
-        <div class="space-y-10 text-white/70 leading-[2.2] text-base md:text-lg max-w-xl">
+        <div class="space-y-10 text-white/70 leading-[2.3] text-base md:text-lg max-w-xl">
 
           <p>
             Trabalho entre direção visual, motion graphics, audiovisual contemporâneo e produção cultural criando experiências conectadas à estética, território e experimentação.
           </p>
 
           <p>
-            Minha trajetória atravessa festivais, backstage, produção de palco, circulação artística, VJ, identidade visual e cultura contemporânea.
+            Minha trajetória atravessa festivais, backstage, circulação artística, produção de palco, VJ, identidade visual e cultura contemporânea.
           </p>
 
           <p>
@@ -331,150 +528,15 @@
 
       </div>
 
-      <div class="text-right massive-text text-white/90">
+      <div class="text-right">
 
-        Cinema.
-        <br>
-        Motion.
-        <br>
-        Cultura.
+        <div class="section-title text-white/90">
 
-      </div>
-
-    </div>
-
-  </section>
-
-  <div class="line"></div>
-
-  <!-- BIG TEXT -->
-
-  <section class="overflow-hidden py-20">
-
-    <div class="whitespace-nowrap massive-text text-white/[0.04]">
-
-      AUDIOVISUAL • MOTION • VJ • CULTURA • DESIGN • PRODUÇÃO •
-
-    </div>
-
-  </section>
-
-  <div class="line"></div>
-
-  <!-- TRAJETÓRIA -->
-
-  <section
-    id="trajetoria"
-    class="relative px-6 md:px-24 py-44 md:py-56"
-  >
-
-    <div class="absolute left-0 top-0 massive-text text-white/[0.02]">
-
-      CULTURA
-
-    </div>
-
-    <div class="relative z-10">
-
-      <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-10">
-        Trajetória
-      </div>
-
-      <h2 class="section-title mb-24">
-
-        Experiência
-
-      </h2>
-
-      <div class="border-t border-white/5">
-
-        <!-- ITEM -->
-
-        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
-
-          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-            01
-          </div>
-
-          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-            Bloop Cultural
-          </h3>
-
-          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-            Assistente de produção, motion graphics, credenciamento e editais culturais.
-          </p>
-
-        </div>
-
-        <!-- ITEM -->
-
-        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
-
-          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-            02
-          </div>
-
-          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-            FUNCARTE
-          </h3>
-
-          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-            Motion designer e audiovisual institucional.
-          </p>
-
-        </div>
-
-        <!-- ITEM -->
-
-        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
-
-          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-            03
-          </div>
-
-          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-            Clickmassa Conversas
-          </h3>
-
-          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-            Motion graphics, telão LED, experiências audiovisuais e eventos.
-          </p>
-
-        </div>
-
-        <!-- ITEM -->
-
-        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
-
-          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-            04
-          </div>
-
-          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-            Câmara Municipal de Parnamirim
-          </h3>
-
-          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-            Designer gráfico e audiovisual institucional.
-          </p>
-
-        </div>
-
-        <!-- ITEM -->
-
-        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
-
-          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-            05
-          </div>
-
-          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-            Guria Produtora
-          </h3>
-
-          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-            Social media, audiovisual, cobertura de eventos e comunicação.
-          </p>
+          Cinema.
+          <br>
+          Motion.
+          <br>
+          Cultura.
 
         </div>
 
