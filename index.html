@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 
@@ -8,51 +8,171 @@
 
   <title>Kethuly Aline — Direção Visual & Produção Cultural</title>
 
+  <!-- TAILWIND -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
-    html {
-      scroll-behavior: smooth;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      background: #000;
-      overflow-x: hidden;
-      font-family: Arial, Helvetica, sans-serif;
+    html{
+      scroll-behavior:smooth;
     }
 
-    .grain {
-      position: fixed;
-      inset: 0;
-      opacity: 0.04;
-      pointer-events: none;
+    body{
+      background:#020202;
+      overflow-x:hidden;
+      font-family:'Inter',sans-serif;
+      color:white;
+    }
+
+    ::selection{
+      background:#67e8f9;
+      color:black;
+    }
+
+    /* GRAIN */
+
+    .grain{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.035;
+      z-index:999;
       background-image:
-        radial-gradient(#ffffff 0.7px, transparent 0.7px);
-      background-size: 4px 4px;
-      z-index: 999;
+      radial-gradient(#fff 0.7px,transparent 0.7px);
+      background-size:4px 4px;
     }
 
-    .glow {
-      position: fixed;
-      top: -20%;
-      right: -10%;
-      width: 900px;
-      height: 900px;
-      background: rgba(34,211,238,0.12);
-      filter: blur(180px);
-      border-radius: 999px;
-      pointer-events: none;
+    /* CYAN GLOW */
+
+    .cyan-glow{
+      position:fixed;
+      top:-20%;
+      right:-10%;
+      width:900px;
+      height:900px;
+      background:rgba(34,211,238,.12);
+      filter:blur(180px);
+      border-radius:999px;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    /* LINES */
+
+    .line{
+      width:100%;
+      height:1px;
+      background:rgba(255,255,255,.06);
+    }
+
+    /* HUGE TEXT */
+
+    .hero-title{
+      font-size:clamp(6rem,15vw,18rem);
+      line-height:.78;
+      letter-spacing:-0.11em;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      font-size:clamp(4rem,10vw,10rem);
+      line-height:.82;
+      letter-spacing:-0.09em;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .massive-text{
+      font-size:clamp(6rem,16vw,20rem);
+      line-height:.8;
+      letter-spacing:-0.1em;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    /* PARALLAX */
+
+    .parallax{
+      transform:translateZ(0);
+      will-change:transform;
+    }
+
+    /* BUTTON */
+
+    .btn{
+      border:1px solid rgba(255,255,255,.1);
+      padding:18px 34px;
+      text-transform:uppercase;
+      letter-spacing:.35em;
+      font-size:10px;
+      transition:.5s;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn:hover{
+      background:#67e8f9;
+      color:black;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-item{
+      border-bottom:1px solid rgba(255,255,255,.06);
+      transition:.6s;
+    }
+
+    .experience-item:hover{
+      background:rgba(255,255,255,.02);
+      padding-left:20px;
+    }
+
+    .experience-item h3{
+      transition:.6s;
+    }
+
+    .experience-item:hover h3{
+      transform:translateX(10px);
+    }
+
+    /* FESTIVAL */
+
+    .festival{
+      border-bottom:1px solid rgba(255,255,255,.06);
+      padding-bottom:30px;
+      transition:.6s;
+    }
+
+    .festival:hover{
+      border-color:rgba(103,232,249,.4);
+      transform:translateX(10px);
     }
 
   </style>
 
 </head>
 
-<body class="text-white">
+<body>
 
   <div class="grain"></div>
-  <div class="glow"></div>
+  <div class="cyan-glow"></div>
 
   <!-- NAV -->
 
@@ -65,7 +185,7 @@
         class="w-8"
       >
 
-      <span class="uppercase tracking-[0.4em] text-[10px]">
+      <span class="uppercase tracking-[0.45em] text-[10px]">
         Kethuly Aline
       </span>
 
@@ -81,7 +201,7 @@
         Trajetória
       </a>
 
-      <a href="#festival" class="hover:text-cyan-300 transition">
+      <a href="#circuito" class="hover:text-cyan-300 transition">
         Circuito
       </a>
 
@@ -101,20 +221,28 @@
 
   <section class="relative min-h-screen flex items-center overflow-hidden px-6 md:px-20">
 
+    <!-- OVERLAY -->
+
     <div class="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-black z-10"></div>
+
+    <!-- IMAGE -->
 
     <img
       src="hero.png"
-      class="absolute right-[-10%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.58]"
+      class="absolute right-[-5%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.58] parallax"
     >
+
+    <!-- CONTENT -->
 
     <div class="relative z-20 max-w-[1300px]">
 
-      <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] md:text-xs mb-8">
+      <div class="uppercase tracking-[0.55em] text-cyan-300 text-[10px] md:text-xs mb-10">
+
         Direção Visual • Motion • Audiovisual • Produção Cultural
+
       </div>
 
-      <h1 class="uppercase font-black leading-[0.75] tracking-[-0.1em] text-[24vw] md:text-[12vw]">
+      <h1 class="hero-title">
 
         Kethuly
         <br>
@@ -122,13 +250,13 @@
 
       </h1>
 
-      <div class="grid md:grid-cols-[120px_1fr] gap-8 mt-10 max-w-2xl">
+      <div class="grid md:grid-cols-[120px_1fr] gap-10 mt-12 max-w-3xl">
 
         <div class="uppercase tracking-[0.4em] text-[10px] text-white/40 pt-2">
           Sobre
         </div>
 
-        <div class="text-white/70 leading-[2.1] text-sm md:text-lg">
+        <div class="text-white/70 leading-[2.1] text-base md:text-lg">
 
           Diretora visual, motion designer, VJ e produtora cultural atuando entre festivais, experiências audiovisuais, direção artística, cultura contemporânea e narrativas afro-ameríndias.
 
@@ -136,12 +264,12 @@
 
       </div>
 
-      <div class="flex flex-wrap gap-4 mt-14">
+      <div class="flex flex-wrap gap-4 mt-16">
 
         <a
           href="https://thekitket.my.canva.site/"
           target="_blank"
-          class="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
+          class="btn"
         >
           Ver Portfólio
         </a>
@@ -149,7 +277,7 @@
         <a
           href="https://instagram.com/nucleoaxecultural"
           target="_blank"
-          class="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-white hover:text-black transition-all duration-500"
+          class="btn"
         >
           Núcleo Axé Cultural
         </a>
@@ -160,19 +288,24 @@
 
   </section>
 
+  <div class="line"></div>
+
   <!-- SOBRE -->
 
-  <section id="sobre" class="px-6 md:px-24 py-44 border-t border-white/5">
+  <section
+    id="sobre"
+    class="px-6 md:px-24 py-44 md:py-56"
+  >
 
     <div class="grid md:grid-cols-2 gap-24 items-end">
 
       <div>
 
-        <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
+        <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-10">
           Manifesto
         </div>
 
-        <h2 class="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[18vw] md:text-[8vw] mb-12">
+        <h2 class="section-title mb-14">
 
           Narrativas
           <br>
@@ -180,14 +313,14 @@
 
         </h2>
 
-        <div class="space-y-8 text-white/70 leading-[2.2] text-sm md:text-lg max-w-xl">
+        <div class="space-y-10 text-white/70 leading-[2.2] text-base md:text-lg max-w-xl">
 
           <p>
             Trabalho entre direção visual, motion graphics, audiovisual contemporâneo e produção cultural criando experiências conectadas à estética, território e experimentação.
           </p>
 
           <p>
-            Minha trajetória atravessa festivais, backstage, circulação artística, produção de palco, VJ, identidade visual e cultura contemporânea.
+            Minha trajetória atravessa festivais, backstage, produção de palco, circulação artística, VJ, identidade visual e cultura contemporânea.
           </p>
 
           <p>
@@ -198,7 +331,7 @@
 
       </div>
 
-      <div class="text-right uppercase font-black leading-[0.8] tracking-[-0.1em] text-[16vw] md:text-[6vw] text-white/90">
+      <div class="text-right massive-text text-white/90">
 
         Cinema.
         <br>
@@ -212,313 +345,138 @@
 
   </section>
 
-  <!-- EXPERIÊNCIA -->
+  <div class="line"></div>
 
-  <section id="trajetoria" class="px-6 md:px-24 py-44 border-t border-white/5">
+  <!-- BIG TEXT -->
 
-    <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-      Trajetória
-    </div>
+  <section class="overflow-hidden py-20">
 
-    <h2 class="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[20vw] md:text-[9vw] mb-24">
+    <div class="whitespace-nowrap massive-text text-white/[0.04]">
 
-      Experiência
-
-    </h2>
-
-    <div class="border-t border-white/5">
-
-      <div class="grid md:grid-cols-[120px_1fr_1fr] gap-8 border-b border-white/5 py-10">
-
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-          01
-        </div>
-
-        <h3 class="uppercase text-3xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-          Bloop Cultural
-        </h3>
-
-        <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-          Assistente de produção, motion graphics, credenciamento e editais culturais.
-        </p>
-
-      </div>
-
-      <div class="grid md:grid-cols-[120px_1fr_1fr] gap-8 border-b border-white/5 py-10">
-
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-          02
-        </div>
-
-        <h3 class="uppercase text-3xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-          FUNCARTE
-        </h3>
-
-        <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-          Motion designer e audiovisual institucional.
-        </p>
-
-      </div>
-
-      <div class="grid md:grid-cols-[120px_1fr_1fr] gap-8 border-b border-white/5 py-10">
-
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-          03
-        </div>
-
-        <h3 class="uppercase text-3xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-          Clickmassa Conversas
-        </h3>
-
-        <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-          Motion graphics, telão LED, audiovisual e eventos.
-        </p>
-
-      </div>
-
-      <div class="grid md:grid-cols-[120px_1fr_1fr] gap-8 border-b border-white/5 py-10">
-
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-          04
-        </div>
-
-        <h3 class="uppercase text-3xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-          Câmara Municipal de Parnamirim
-        </h3>
-
-        <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-          Designer gráfico e audiovisual institucional.
-        </p>
-
-      </div>
-
-      <div class="grid md:grid-cols-[120px_1fr_1fr] gap-8 border-b border-white/5 py-10">
-
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-          05
-        </div>
-
-        <h3 class="uppercase text-3xl md:text-6xl font-black tracking-[-0.06em] leading-none">
-          Guria Produtora
-        </h3>
-
-        <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-          Social media, audiovisual, cobertura de eventos e comunicação.
-        </p>
-
-      </div>
+      AUDIOVISUAL • MOTION • VJ • CULTURA • DESIGN • PRODUÇÃO •
 
     </div>
 
   </section>
 
-  <!-- FESTIVAIS -->
+  <div class="line"></div>
 
-  <section id="festival" class="px-6 md:px-24 py-44 border-t border-white/5 bg-[#050505]">
+  <!-- TRAJETÓRIA -->
 
-    <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-      Festivais & Artistas
-    </div>
+  <section
+    id="trajetoria"
+    class="relative px-6 md:px-24 py-44 md:py-56"
+  >
 
-    <h2 class="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[22vw] md:text-[10vw] mb-24">
+    <div class="absolute left-0 top-0 massive-text text-white/[0.02]">
 
-      Circuito
-      <br>
-      Cultural
-
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-x-24 gap-y-20">
-
-      <div>
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] mb-5">01</div>
-        <h3 class="uppercase font-black tracking-[-0.08em] text-4xl md:text-7xl leading-[0.9]">
-          Festival MADA
-        </h3>
-      </div>
-
-      <div>
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] mb-5">02</div>
-        <h3 class="uppercase font-black tracking-[-0.08em] text-4xl md:text-7xl leading-[0.9]">
-          Coquetel Molotov
-        </h3>
-      </div>
-
-      <div>
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] mb-5">03</div>
-        <h3 class="uppercase font-black tracking-[-0.08em] text-4xl md:text-7xl leading-[0.9]">
-          Karol Conká
-        </h3>
-      </div>
-
-      <div>
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] mb-5">04</div>
-        <h3 class="uppercase font-black tracking-[-0.08em] text-4xl md:text-7xl leading-[0.9]">
-          Potyguara Bardo
-        </h3>
-      </div>
-
-      <div>
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] mb-5">05</div>
-        <h3 class="uppercase font-black tracking-[-0.08em] text-4xl md:text-7xl leading-[0.9]">
-          Francisco, El Hombre
-        </h3>
-      </div>
-
-      <div>
-        <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] mb-5">06</div>
-        <h3 class="uppercase font-black tracking-[-0.08em] text-4xl md:text-7xl leading-[0.9]">
-          Festival DoSol
-        </h3>
-      </div>
+      CULTURA
 
     </div>
 
-  </section>
+    <div class="relative z-10">
 
-  <!-- NÚCLEO -->
-
-  <section id="nucleo" class="min-h-screen flex items-center border-t border-white/5 px-6 md:px-24 py-44">
-
-    <div class="grid md:grid-cols-2 gap-20 items-center w-full">
-
-      <div class="flex justify-center">
-
-        <img
-          src="nucleo.png"
-          class="w-full max-w-lg"
-        >
-
+      <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-10">
+        Trajetória
       </div>
 
-      <div>
+      <h2 class="section-title mb-24">
 
-        <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-          Fundadora
-        </div>
-
-        <h2 class="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[18vw] md:text-[7vw] mb-10">
-
-          Núcleo
-          <br>
-          Axé
-          <br>
-          Cultural
-
-        </h2>
-
-        <div class="space-y-8 text-white/70 leading-[2.2] text-sm md:text-lg max-w-xl">
-
-          <p>
-            Iniciativa dedicada ao fortalecimento de expressões culturais afro-ameríndias através da comunicação, audiovisual e produção cultural contemporânea.
-          </p>
-
-          <p>
-            O projeto desenvolve identidades visuais, experiências artísticas, circulação cultural e narrativas conectadas à ancestralidade, território e estética contemporânea.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
-
-  <section class="px-6 md:px-24 py-44 border-t border-white/5">
-
-    <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-      Ferramentas
-    </div>
-
-    <h2 class="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[20vw] md:text-[9vw] mb-20">
-
-      Skills
-
-    </h2>
-
-    <div class="flex flex-wrap gap-4">
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        After Effects
-      </div>
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        Premiere Pro
-      </div>
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        Photoshop
-      </div>
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        Illustrator
-      </div>
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        Motion Design
-      </div>
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        Produção Cultural
-      </div>
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        VJ
-      </div>
-
-      <div class="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px]">
-        Audiovisual
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CONTATO -->
-
-  <section id="contato" class="min-h-screen flex items-center justify-center text-center border-t border-white/5 px-6">
-
-    <div>
-
-      <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-        Contato
-      </div>
-
-      <h2 class="uppercase font-black leading-[0.75] tracking-[-0.1em] text-[24vw] md:text-[11vw]">
-
-        Vamos
-        <br>
-        Criar
+        Experiência
 
       </h2>
 
-      <div class="flex flex-wrap justify-center gap-4 mt-14">
+      <div class="border-t border-white/5">
 
-        <a
-          href="mailto:thekitket@gmail.com"
-          class="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-        >
-          Email
-        </a>
+        <!-- ITEM -->
 
-        <a
-          href="https://instagram.com/thekitket"
-          target="_blank"
-          class="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-        >
-          Instagram
-        </a>
+        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
 
-        <a
-          href="https://instagram.com/nucleoaxecultural"
-          target="_blank"
-          class="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-        >
-          Núcleo Axé
-        </a>
+          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
+            01
+          </div>
+
+          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
+            Bloop Cultural
+          </h3>
+
+          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
+            Assistente de produção, motion graphics, credenciamento e editais culturais.
+          </p>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
+
+          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
+            02
+          </div>
+
+          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
+            FUNCARTE
+          </h3>
+
+          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
+            Motion designer e audiovisual institucional.
+          </p>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
+
+          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
+            03
+          </div>
+
+          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
+            Clickmassa Conversas
+          </h3>
+
+          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
+            Motion graphics, telão LED, experiências audiovisuais e eventos.
+          </p>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
+
+          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
+            04
+          </div>
+
+          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
+            Câmara Municipal de Parnamirim
+          </h3>
+
+          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
+            Designer gráfico e audiovisual institucional.
+          </p>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="experience-item grid md:grid-cols-[120px_1fr_1fr] gap-8 py-12">
+
+          <div class="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
+            05
+          </div>
+
+          <h3 class="uppercase text-4xl md:text-6xl font-black tracking-[-0.06em] leading-none">
+            Guria Produtora
+          </h3>
+
+          <p class="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
+            Social media, audiovisual, cobertura de eventos e comunicação.
+          </p>
+
+        </div>
 
       </div>
 
