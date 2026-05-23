@@ -1,7 +1,3 @@
-<!-- =========================================================
-KETHULY ALINE — CURRÍCULO ONLINE COMPLETO
-========================================================= -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,7 +6,7 @@ KETHULY ALINE — CURRÍCULO ONLINE COMPLETO
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kethuly Aline | Currículo Online</title>
+<title>Kethuly Aline | Direção Visual & Produção Cultural</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -43,6 +39,10 @@ background:#67e8f9;
 color:black;
 }
 
+/* =========================
+GRAIN
+========================= */
+
 .grain{
 position:fixed;
 inset:0;
@@ -53,6 +53,10 @@ background-image:
 radial-gradient(#fff 0.7px,transparent 0.7px);
 background-size:4px 4px;
 }
+
+/* =========================
+CYAN GLOW
+========================= */
 
 .glow{
 position:fixed;
@@ -65,6 +69,10 @@ filter:blur(180px);
 border-radius:999px;
 pointer-events:none;
 }
+
+/* =========================
+TYPOGRAPHY
+========================= */
 
 .hero-title{
 
@@ -86,6 +94,24 @@ text-transform:uppercase;
 
 }
 
+/* =========================
+UTILS
+========================= */
+
+.cyan{
+color:#67e8f9;
+}
+
+.line{
+width:100%;
+height:1px;
+background:rgba(255,255,255,.08);
+}
+
+/* =========================
+CARDS
+========================= */
+
 .card{
 
 border:1px solid rgba(255,255,255,.08);
@@ -106,34 +132,9 @@ transform:translateY(-5px);
 
 }
 
-.line{
-width:100%;
-height:1px;
-background:rgba(255,255,255,.08);
-}
-
-.skill{
-
-border:1px solid rgba(255,255,255,.08);
-
-padding:14px 18px;
-
-font-size:11px;
-
-text-transform:uppercase;
-
-letter-spacing:.2em;
-
-transition:.5s;
-
-}
-
-.skill:hover{
-
-background:#67e8f9;
-color:black;
-
-}
+/* =========================
+BUTTON
+========================= */
 
 .btn{
 
@@ -164,8 +165,31 @@ color:black;
 
 }
 
-.cyan{
-color:#67e8f9;
+/* =========================
+SKILLS
+========================= */
+
+.skill{
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:14px 18px;
+
+font-size:11px;
+
+text-transform:uppercase;
+
+letter-spacing:.2em;
+
+transition:.5s;
+
+}
+
+.skill:hover{
+
+background:#67e8f9;
+color:black;
+
 }
 
 </style>
@@ -174,17 +198,30 @@ color:#67e8f9;
 
 <body>
 
+<!-- GRAIN -->
+
 <div class="grain"></div>
+
+<!-- GLOW -->
+
 <div class="glow"></div>
 
 <!-- HERO -->
 
 <section class="relative min-h-screen flex items-center overflow-hidden px-6 md:px-20 py-32">
 
+<!-- FOTO -->
+
 <img
 src="hero.png"
 class="absolute right-[-5%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.6]"
 >
+
+<!-- OVERLAY -->
+
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent"></div>
+
+<!-- CONTENT -->
 
 <div class="relative z-10 max-w-[950px]">
 
@@ -237,11 +274,10 @@ Núcleo Axé Cultural
 </a>
 
 <a
-href="https://linkedin.com/in/thekitket"
-target="_blank"
+href="mailto:thekitket@gmail.com"
 class="btn"
 >
-Linkedin
+Contato
 </a>
 
 </div>
@@ -252,44 +288,50 @@ Linkedin
 
 <div class="line"></div>
 
-<!-- DADOS -->
+<!-- CONTATO -->
 
 <section class="px-6 md:px-24 py-24">
 
-<div class="uppercase tracking-[0.4em] text-[11px] cyan mb-5">
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
 Informações
 </div>
 
 <h2 class="section-title mb-20">
+
 Contato
+
 </h2>
 
 <div class="grid md:grid-cols-2 gap-8">
 
-<div class="card p-10 rounded-[28px]">
-<h3 class="text-2xl font-black mb-6">Contato</h3>
+<div class="card p-10 rounded-[30px]">
 
-<div class="space-y-4 text-white/70 leading-[2]">
-
-<p>Parnamirim - RN</p>
-<p>(84) 9 9964-9683</p>
-<p>thekitket@gmail.com</p>
-<p>wa.me/+558499649683</p>
-
-</div>
-</div>
-
-<div class="card p-10 rounded-[28px]">
-
-<h3 class="text-2xl font-black mb-6">
-Setup Home Office
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-8">
+Contato
 </h3>
 
-<div class="space-y-4 text-white/70 leading-[2]">
+<div class="space-y-5 text-white/70 leading-[2]">
+
+<p>Parnamirim — RN</p>
+<p>(84) 99964-9683</p>
+<p>thekitket@gmail.com</p>
+<p>@thekitket</p>
+
+</div>
+
+</div>
+
+<div class="card p-10 rounded-[30px]">
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-8">
+Home Office
+</h3>
+
+<div class="space-y-5 text-white/70 leading-[2]">
 
 <p>AMD Ryzen 5 4600</p>
+<p>RTX 3060 12GB</p>
 <p>16GB RAM</p>
-<p>NVIDIA RTX 3060 12GB</p>
 <p>SSD NVME 500GB</p>
 <p>Windows 11</p>
 
@@ -319,12 +361,10 @@ Trajetória
 
 <div class="space-y-8">
 
-<!-- ITEM -->
-
 <div class="card p-10 rounded-[30px]">
 
 <div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
-2025 - Atual
+2025 — Atual
 </div>
 
 <h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
@@ -332,12 +372,10 @@ Bloop Cultural
 </h3>
 
 <p class="text-white/60 leading-[2]">
-Assistente de Produção PJ. Criação e animação de peças gráficas, credenciamentos, acompanhamento artístico e inscrições em editais culturais.
+Assistente de produção PJ, motion graphics, credenciamento, acompanhamento artístico e inscrições em editais culturais.
 </p>
 
 </div>
-
-<!-- ITEM -->
 
 <div class="card p-10 rounded-[30px]">
 
@@ -355,12 +393,10 @@ Motion designer para eventos, animações para telão LED, vídeos para tráfego
 
 </div>
 
-<!-- ITEM -->
-
 <div class="card p-10 rounded-[30px]">
 
 <div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
-2024 - 2025
+2024 — 2025
 </div>
 
 <h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
@@ -368,35 +404,15 @@ Motion designer para eventos, animações para telão LED, vídeos para tráfego
 </h3>
 
 <p class="text-white/60 leading-[2]">
-Atendimento ao cliente, suporte via chat e ligação, planilhas, entrevistas e apoio ao RH.
+Atendimento ao cliente, suporte via chat e ligação, apoio ao RH, entrevistas e planilhas.
 </p>
 
 </div>
 
-<!-- ITEM -->
-
 <div class="card p-10 rounded-[30px]">
 
 <div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
-2022 - 2025
-</div>
-
-<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
-Bloop Cultural
-</h3>
-
-<p class="text-white/60 leading-[2]">
-Assistência de produção, motion graphics, editais culturais e acompanhamento artístico.
-</p>
-
-</div>
-
-<!-- ITEM -->
-
-<div class="card p-10 rounded-[30px]">
-
-<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
-2022 - 2023
+2022 — 2023
 </div>
 
 <h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
@@ -404,17 +420,15 @@ FUNCARTE — SECULT
 </h3>
 
 <p class="text-white/60 leading-[2]">
-Motion designer para peças institucionais.
+Motion designer e audiovisual institucional.
 </p>
 
 </div>
 
-<!-- ITEM -->
-
 <div class="card p-10 rounded-[30px]">
 
 <div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
-2020 - 2021
+2020 — 2021
 </div>
 
 <h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
@@ -423,24 +437,6 @@ Câmara Municipal de Parnamirim
 
 <p class="text-white/60 leading-[2]">
 Designer gráfico, mídias sociais, captação e edição de vídeos.
-</p>
-
-</div>
-
-<!-- ITEM -->
-
-<div class="card p-10 rounded-[30px]">
-
-<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
-2019
-</div>
-
-<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
-Já Passei Online
-</h3>
-
-<p class="text-white/60 leading-[2]">
-Gravação, edição e motion para plataforma de vídeo aulas.
 </p>
 
 </div>
@@ -467,7 +463,7 @@ Formação
 
 <div class="card p-10 rounded-[30px]">
 
-<h3 class="text-4xl font-black tracking-[-0.05em] mb-6">
+<h3 class="text-4xl font-black tracking-[-0.05em] mb-5">
 IFRN — Técnico em Eventos
 </h3>
 
@@ -535,17 +531,210 @@ Oficina de Roteiro para Audiovisual
 
 <div class="line"></div>
 
+<!-- ARTISTAS -->
+
+<section class="px-6 md:px-24 py-32">
+
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Artistas
+</div>
+
+<h2 class="section-title mb-20">
+
+Artistas
+& Projetos
+
+</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+VJ • Produção • Merchandising
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Potyguara Bardo
+</h3>
+
+<p class="text-white/60 leading-[2]">
+
+Carnaval de Natal (2024 / 2025 / 2026)
+<br>
+Bloquissimo (2022)
+<br>
+Festival DoSol (2022)
+<br>
+Festival MADA (2019)
+
+</p>
+
+</div>
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+Produção • VJ
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Karol Conká
+</h3>
+
+<p class="text-white/60 leading-[2]">
+
+Festival MADA (2023)
+<br>
+Patuscada (2024)
+
+</p>
+
+</div>
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+Merchandising
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Francisco, El Hombre
+</h3>
+
+<p class="text-white/60 leading-[2]">
+
+Patuscada (2022)
+
+</p>
+
+</div>
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+Produção
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Juliana G
+</h3>
+
+<p class="text-white/60 leading-[2]">
+
+Carnaval Multicultural de Natal (2023)
+<br>
+Natal em Natal (2022)
+<br>
+Rock Ribeira (2023)
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="line"></div>
+
+<!-- FESTIVAIS -->
+
+<section class="px-6 md:px-24 py-32">
+
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Festivais & Eventos
+</div>
+
+<h2 class="section-title mb-20">
+
+Festivais
+
+</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+Produção • Credenciamento
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Festival No Ar Coquetel Molotov
+</h3>
+
+<p class="text-white/60 leading-[2]">
+Recife — 2021 / 2022 / 2023
+</p>
+
+</div>
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+Produção • VJ
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Festival MADA
+</h3>
+
+<p class="text-white/60 leading-[2]">
+Natal — 2019 / 2023
+</p>
+
+</div>
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+Produção
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Festival DoSol
+</h3>
+
+<p class="text-white/60 leading-[2]">
+Natal — 2022
+</p>
+
+</div>
+
+<div class="card p-10 rounded-[28px]">
+
+<div class="cyan uppercase tracking-[0.3em] text-[10px] mb-5">
+Produção
+</div>
+
+<h3 class="text-3xl font-black tracking-[-0.05em] mb-5">
+Open Dance Brasil
+</h3>
+
+<p class="text-white/60 leading-[2]">
+Natal — 2024
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="line"></div>
+
 <!-- SKILLS -->
 
 <section class="px-6 md:px-24 py-32">
 
 <div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
-Skills
+Ferramentas
 </div>
 
 <h2 class="section-title mb-20">
 
-Ferramentas
+Skills
 
 </h2>
 
@@ -557,14 +746,11 @@ Ferramentas
 <div class="skill">Illustrator</div>
 <div class="skill">Indesign</div>
 <div class="skill">Animate</div>
-<div class="skill">Excel</div>
-<div class="skill">PowerPoint</div>
-<div class="skill">Word</div>
 <div class="skill">Motion Design</div>
 <div class="skill">Produção Cultural</div>
-<div class="skill">Direção Visual</div>
 <div class="skill">Audiovisual</div>
 <div class="skill">VJ</div>
+<div class="skill">Direção Visual</div>
 <div class="skill">Colorista</div>
 
 </div>
@@ -573,53 +759,47 @@ Ferramentas
 
 <div class="line"></div>
 
-<!-- EVENTOS -->
+<!-- NÚCLEO AXÉ -->
 
 <section class="px-6 md:px-24 py-32">
 
-<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
-Shows & Eventos
+<div class="grid md:grid-cols-2 gap-20 items-center">
+
+<div>
+
+<img
+src="nucleo.png"
+class="w-full max-w-[420px]"
+>
+
 </div>
 
-<h2 class="section-title mb-20">
+<div>
 
-Circuito
+<div class="uppercase tracking-[0.45em] text-[11px] cyan mb-6">
+Fundadora
+</div>
+
+<h2 class="section-title mb-12">
+
+Núcleo
+Axé
 Cultural
 
 </h2>
 
-<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-8 text-white/70 leading-[2.1]">
 
-<div class="card p-8 rounded-[24px]">
-Festival MADA
+<p>
+Iniciativa voltada ao fortalecimento de expressões culturais afro-ameríndias através da comunicação, produção cultural e audiovisual.
+</p>
+
+<p>
+Desenvolvimento de projetos culturais, identidades visuais, circulação artística e narrativas ligadas à ancestralidade e território.
+</p>
+
 </div>
 
-<div class="card p-8 rounded-[24px]">
-Coquetel Molotov
-</div>
-
-<div class="card p-8 rounded-[24px]">
-Karol Conká
-</div>
-
-<div class="card p-8 rounded-[24px]">
-Potyguara Bardo
-</div>
-
-<div class="card p-8 rounded-[24px]">
-Francisco El Hombre
-</div>
-
-<div class="card p-8 rounded-[24px]">
-Festival DoSol
-</div>
-
-<div class="card p-8 rounded-[24px]">
-Carnaval Multicultural
-</div>
-
-<div class="card p-8 rounded-[24px]">
-Open Dance Brasil
 </div>
 
 </div>
@@ -628,7 +808,7 @@ Open Dance Brasil
 
 <div class="line"></div>
 
-<!-- CONTATO -->
+<!-- FOOTER -->
 
 <section class="px-6 md:px-24 py-32 text-center">
 
@@ -665,7 +845,7 @@ href="https://instagram.com/nucleoaxecultural"
 target="_blank"
 class="btn"
 >
-Núcleo Axé Cultural
+Núcleo Axé
 </a>
 
 </div>
