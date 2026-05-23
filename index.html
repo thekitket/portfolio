@@ -1,558 +1,157 @@
-// ===============================
-// KETHULY ALINE — CINEMATIC PORTFOLIO
-// ===============================
-// STACK:
-// React + TailwindCSS + Framer Motion
-//
-// ARQUIVOS NECESSÁRIOS NA /public
-//
-// /public
-// ├── hero.png
-// ├── logo.png
-// └── nucleo.png
-//
-// ===============================
+<!DOCTYPE html>
+<html lang="pt-br">
 
-import { motion } from "framer-motion";
+<head>
 
-export default function Portfolio() {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  const experiences = [
-    {
-      title: "Bloop Cultural",
-      desc: "Assistente de produção, motion graphics, editais culturais e credenciamento."
-    },
-    {
-      title: "FUNCARTE",
-      desc: "Motion designer e audiovisual institucional."
-    },
-    {
-      title: "Clickmassa Conversas",
-      desc: "Motion graphics, telão LED, experiências audiovisuais e eventos."
-    },
-    {
-      title: "Festival MADA",
-      desc: "Produção cultural, backstage e circulação artística."
-    },
-    {
-      title: "Guria Produtora",
-      desc: "Social media, audiovisual e cobertura de eventos."
-    },
-    {
-      title: "Plutão Já Foi Planeta",
-      desc: "Cobertura, motion design e direção visual."
+  <title>Kethuly Aline</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
     }
-  ];
 
-  const festivals = [
-    "Festival MADA",
-    "Coquetel Molotov",
-    "Karol Conká",
-    "Potyguara Bardo",
-    "Francisco, El Hombre",
-    "Plutão Já Foi Planeta",
-    "O Teatro Mágico",
-    "Festival DoSol",
-    "Carnaval Multicultural",
-    "Juliana G"
-  ];
+    body {
+      background: #000;
+      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-  const skills = [
-    "After Effects",
-    "Premiere Pro",
-    "Photoshop",
-    "Illustrator",
-    "Motion Design",
-    "VJ",
-    "Direção Visual",
-    "Produção Cultural",
-    "Audiovisual",
-    "Colorização",
-    "Editais Culturais",
-    "Backstage"
-  ];
+    .grain {
+      position: fixed;
+      inset: 0;
+      opacity: 0.04;
+      pointer-events: none;
+      background-image:
+        radial-gradient(#ffffff 0.7px, transparent 0.7px);
+      background-size: 4px 4px;
+      z-index: 999;
+    }
 
-  return (
+  </style>
 
-    <main className="bg-black text-white overflow-hidden">
+</head>
 
-      {/* =========================================
-      GRAIN
-      ========================================= */}
+<body class="text-white">
 
-      <div className="fixed inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(#ffffff_0.8px,transparent_0.8px)] [background-size:4px_4px] z-50" />
+  <div class="grain"></div>
 
-      {/* =========================================
-      CYAN GLOW
-      ========================================= */}
+  <!-- HERO -->
 
-      <div className="fixed top-[-20%] right-[-10%] w-[900px] h-[900px] bg-cyan-300/10 blur-[180px] rounded-full pointer-events-none z-0" />
+  <section class="relative min-h-screen flex items-center px-6 md:px-20 overflow-hidden">
 
-      {/* =========================================
-      NAVBAR
-      ========================================= */}
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-black z-10"></div>
 
-      <header className="fixed top-0 left-0 w-full z-40 px-6 md:px-16 py-8 flex justify-between items-center mix-blend-difference">
+    <div class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-cyan-300/10 blur-[180px] rounded-full"></div>
 
-        <div className="flex items-center gap-4">
+    <img
+      src="hero.png"
+      class="absolute right-[-10%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.6]"
+    >
 
-          <img
-            src="/logo.png"
-            className="w-8"
-          />
+    <div class="relative z-20 max-w-[1200px]">
 
-          <span className="uppercase tracking-[0.45em] text-[10px]">
-            Kethuly Aline
-          </span>
+      <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] md:text-xs mb-8">
+        Direção Visual • Motion • Audiovisual • Produção Cultural
+      </div>
 
+      <h1 class="uppercase font-black leading-[0.75] tracking-[-0.1em] text-[24vw] md:text-[12vw]">
+        Kethuly
+        <br>
+        Aline
+      </h1>
+
+      <div class="grid md:grid-cols-[120px_1fr] gap-8 mt-10 max-w-2xl">
+
+        <div class="uppercase tracking-[0.4em] text-[10px] text-white/40 pt-2">
+          Sobre
         </div>
 
-        <nav className="hidden md:flex gap-10 uppercase tracking-[0.35em] text-[10px]">
-
-          <a href="#about" className="hover:text-cyan-300 transition">
-            Sobre
-          </a>
-
-          <a href="#experience" className="hover:text-cyan-300 transition">
-            Trajetória
-          </a>
-
-          <a href="#festival" className="hover:text-cyan-300 transition">
-            Circuito
-          </a>
-
-          <a href="#nucleo" className="hover:text-cyan-300 transition">
-            Núcleo
-          </a>
-
-          <a href="#contact" className="hover:text-cyan-300 transition">
-            Contato
-          </a>
-
-        </nav>
-
-      </header>
-
-      {/* =========================================
-      HERO
-      ========================================= */}
-
-      <section className="relative min-h-screen flex items-center overflow-hidden px-6 md:px-20">
-
-        {/* OVERLAYS */}
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-black z-10" />
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.12),transparent_35%)] z-0" />
-
-        {/* PHOTO */}
-
-        <motion.img
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 0.9, y: 0 }}
-          transition={{ duration: 1.5 }}
-          src="/hero.png"
-          className="absolute right-[-10%] bottom-0 h-[100vh] object-contain grayscale contrast-125 brightness-[0.58]"
-        />
-
-        {/* CONTENT */}
-
-        <div className="relative z-20 max-w-[1300px]">
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="uppercase tracking-[0.5em] text-cyan-300 text-[10px] md:text-xs mb-8"
-          >
-            Direção Visual • Motion • Audiovisual • Produção Cultural
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2 }}
-            className="uppercase font-black leading-[0.75] tracking-[-0.1em] text-[25vw] md:text-[13vw]"
-          >
-            Kethuly
-            <br />
-            Aline
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="grid md:grid-cols-[120px_1fr] gap-8 mt-10 max-w-2xl"
-          >
-
-            <div className="uppercase tracking-[0.4em] text-[10px] text-white/40 pt-2">
-              Sobre
-            </div>
-
-            <div className="text-white/70 leading-[2.1] text-sm md:text-lg">
-              Diretora visual, motion designer, VJ e produtora cultural atuando
-              entre festivais, experiências audiovisuais, direção artística,
-              cultura contemporânea e narrativas afro-ameríndias.
-            </div>
-
-          </motion.div>
-
-          <div className="flex flex-wrap gap-4 mt-14">
-
-            <a
-              href="https://thekitket.my.canva.site/"
-              target="_blank"
-              className="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-            >
-              Ver Portfólio
-            </a>
-
-            <a
-              href="https://instagram.com/nucleoaxecultural"
-              target="_blank"
-              className="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-white hover:text-black transition-all duration-500"
-            >
-              Núcleo Axé Cultural
-            </a>
-
-          </div>
-
+        <div class="text-white/70 leading-[2.1] text-sm md:text-lg">
+          Diretora visual, motion designer, VJ e produtora cultural atuando entre festivais, experiências audiovisuais, direção artística e cultura contemporânea afro-ameríndia.
         </div>
 
-      </section>
+      </div>
 
-      {/* =========================================
-      MANIFESTO
-      ========================================= */}
+      <div class="flex flex-wrap gap-4 mt-14">
 
-      <section
-        id="about"
-        className="relative px-6 md:px-24 py-44 md:py-64 border-t border-white/5"
-      >
+        <a
+          href="https://thekitket.my.canva.site/"
+          target="_blank"
+          class="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
+        >
+          Ver Portfólio
+        </a>
 
-        <div className="grid md:grid-cols-2 gap-24 items-end">
+        <a
+          href="https://instagram.com/nucleoaxecultural"
+          target="_blank"
+          class="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-white hover:text-black transition-all duration-500"
+        >
+          Núcleo Axé Cultural
+        </a>
 
-          <div>
+      </div>
 
-            <div className="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-              Manifesto
-            </div>
+    </div>
 
-            <h2 className="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[18vw] md:text-[8vw] mb-12">
+  </section>
 
-              Narrativas
-              <br />
-              Visuais
+  <!-- MANIFESTO -->
 
-            </h2>
+  <section class="px-6 md:px-24 py-44 border-t border-white/5">
 
-            <div className="space-y-8 text-white/70 leading-[2.2] text-sm md:text-lg max-w-xl">
+    <div class="grid md:grid-cols-2 gap-24 items-end">
 
-              <p>
-                Trabalho entre direção visual, motion graphics, audiovisual e
-                produção cultural criando experiências conectadas à estética,
-                território e experimentação.
-              </p>
+      <div>
 
-              <p>
-                Minha trajetória atravessa festivais, backstage, produção de
-                palco, circulação artística, VJ, identidade visual e cultura
-                contemporânea.
-              </p>
-
-              <p>
-                Fundadora do Núcleo Axé Cultural, iniciativa voltada ao
-                fortalecimento de expressões culturais afro-ameríndias através
-                da comunicação, audiovisual e produção cultural.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div className="text-right uppercase font-black leading-[0.8] tracking-[-0.1em] text-[16vw] md:text-[6vw] text-white/90">
-
-            Cinema.
-            <br />
-            Motion.
-            <br />
-            Cultura.
-
-          </div>
-
+        <div class="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
+          Manifesto
         </div>
 
-      </section>
-
-      {/* =========================================
-      BIG WORDS
-      ========================================= */}
-
-      <section className="overflow-hidden py-20 border-y border-white/5">
-
-        <div className="whitespace-nowrap uppercase font-black tracking-[-0.1em] text-[22vw] md:text-[12vw] text-white/[0.04]">
-
-          AUDIOVISUAL • MOTION • VJ • CULTURA • PRODUÇÃO •
-
-        </div>
-
-      </section>
-
-      {/* =========================================
-      EXPERIENCE
-      ========================================= */}
-
-      <section
-        id="experience"
-        className="relative px-6 md:px-24 py-44 md:py-64"
-      >
-
-        <div className="absolute left-0 top-0 text-[32vw] font-black text-white/[0.02] tracking-[-0.1em] uppercase leading-none">
-          CULTURA
-        </div>
-
-        <div className="relative z-10">
-
-          <div className="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-            Trajetória
-          </div>
-
-          <h2 className="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[20vw] md:text-[9vw] mb-24">
-
-            Experiência
-
-          </h2>
-
-          <div className="border-t border-white/5">
-
-            {experiences.map((item, index) => (
-
-              <div
-                key={index}
-                className="group grid md:grid-cols-[120px_1fr_1fr] gap-8 border-b border-white/5 py-10 md:py-14 hover:bg-white/[0.02] transition-all duration-500"
-              >
-
-                <div className="text-cyan-300 uppercase tracking-[0.35em] text-[10px] pt-2">
-                  0{index + 1}
-                </div>
-
-                <h3 className="uppercase text-3xl md:text-6xl font-black tracking-[-0.06em] leading-none group-hover:translate-x-4 transition-all duration-500">
-
-                  {item.title}
-
-                </h3>
-
-                <p className="text-white/55 leading-[2] text-sm md:text-base max-w-xl">
-                  {item.desc}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* =========================================
-      FESTIVALS
-      ========================================= */}
-
-      <section
-        id="festival"
-        className="relative min-h-screen px-6 md:px-24 py-44 md:py-64 border-t border-white/5 bg-[#050505]"
-      >
-
-        <div className="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-          Festivais & Artistas
-        </div>
-
-        <h2 className="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[22vw] md:text-[10vw] mb-24">
-
-          Circuito
-          <br />
-          Cultural
-
+        <h2 class="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[18vw] md:text-[8vw] mb-12">
+          Narrativas
+          <br>
+          Visuais
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-x-24 gap-y-20">
+        <div class="space-y-8 text-white/70 leading-[2.2] text-sm md:text-lg max-w-xl">
 
-          {festivals.map((item, index) => (
+          <p>
+            Trabalho entre direção visual, motion graphics, audiovisual e produção cultural criando experiências conectadas à estética, território e experimentação.
+          </p>
 
-            <div
-              key={index}
-              className="group border-b border-white/5 pb-10 hover:border-cyan-300/30 transition-all duration-500"
-            >
+          <p>
+            Minha trajetória atravessa festivais, backstage, produção de palco, circulação artística, VJ, identidade visual e cultura contemporânea.
+          </p>
 
-              <div className="text-cyan-300 uppercase tracking-[0.35em] text-[10px] mb-5">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-
-              <h3 className="uppercase font-black tracking-[-0.08em] text-4xl md:text-7xl leading-[0.9] group-hover:translate-x-4 transition-all duration-500">
-
-                {item}
-
-              </h3>
-
-            </div>
-
-          ))}
+          <p>
+            Fundadora do Núcleo Axé Cultural, iniciativa voltada ao fortalecimento de expressões culturais afro-ameríndias através da comunicação, audiovisual e produção cultural.
+          </p>
 
         </div>
 
-      </section>
+      </div>
 
-      {/* =========================================
-      NÚCLEO AXÉ
-      ========================================= */}
+      <div class="text-right uppercase font-black leading-[0.8] tracking-[-0.1em] text-[16vw] md:text-[6vw] text-white/90">
 
-      <section
-        id="nucleo"
-        className="min-h-screen flex items-center border-t border-white/5 px-6 md:px-24 py-44"
-      >
+        Cinema.
+        <br>
+        Motion.
+        <br>
+        Cultura.
 
-        <div className="grid md:grid-cols-2 gap-20 items-center w-full">
+      </div>
 
-          <div className="flex justify-center">
+    </div>
 
-            <img
-              src="/nucleo.png"
-              className="w-full max-w-lg"
-            />
+  </section>
 
-          </div>
+</body>
 
-          <div>
-
-            <div className="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-              Fundadora
-            </div>
-
-            <h2 className="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[18vw] md:text-[7vw] mb-10">
-
-              Núcleo
-              <br />
-              Axé
-              <br />
-              Cultural
-
-            </h2>
-
-            <div className="space-y-8 text-white/70 leading-[2.2] text-sm md:text-lg max-w-xl">
-
-              <p>
-                Iniciativa dedicada ao fortalecimento de expressões culturais
-                afro-ameríndias através da comunicação, audiovisual e produção
-                cultural contemporânea.
-              </p>
-
-              <p>
-                O projeto desenvolve identidades visuais, experiências
-                artísticas, circulação cultural e narrativas conectadas à
-                ancestralidade e território.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* =========================================
-      SKILLS
-      ========================================= */}
-
-      <section className="px-6 md:px-24 py-44 border-t border-white/5">
-
-        <div className="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-          Ferramentas
-        </div>
-
-        <h2 className="uppercase font-black leading-[0.8] tracking-[-0.1em] text-[20vw] md:text-[9vw] mb-20">
-
-          Skills
-
-        </h2>
-
-        <div className="flex flex-wrap gap-4">
-
-          {skills.map((skill, index) => (
-
-            <div
-              key={index}
-              className="border border-white/10 px-6 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-            >
-
-              {skill}
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </section>
-
-      {/* =========================================
-      CONTACT
-      ========================================= */}
-
-      <section
-        id="contact"
-        className="min-h-screen flex items-center justify-center text-center border-t border-white/5 px-6"
-      >
-
-        <div>
-
-          <div className="uppercase tracking-[0.5em] text-cyan-300 text-[10px] mb-8">
-            Contato
-          </div>
-
-          <h2 className="uppercase font-black leading-[0.75] tracking-[-0.1em] text-[24vw] md:text-[11vw]">
-
-            Vamos
-            <br />
-            Criar
-
-          </h2>
-
-          <div className="flex flex-wrap justify-center gap-4 mt-14">
-
-            <a
-              href="mailto:thekitket@gmail.com"
-              className="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-            >
-              Email
-            </a>
-
-            <a
-              href="https://instagram.com/thekitket"
-              target="_blank"
-              className="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://instagram.com/nucleoaxecultural"
-              target="_blank"
-              className="border border-white/10 px-8 py-5 uppercase tracking-[0.35em] text-[10px] hover:bg-cyan-300 hover:text-black transition-all duration-500"
-            >
-              Núcleo Axé
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </main>
-
-  );
-}
+</html>
